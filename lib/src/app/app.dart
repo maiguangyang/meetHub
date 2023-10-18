@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+import 'package:meet_hub/common/utils/navigator.dart';
+import 'package:meet_hub/middleware/auth_middleware.dart';
 import 'package:meet_hub/src/app/routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final AuthMiddleware authMiddleware = AuthMiddleware();
 
     return MaterialApp(
       title: 'meet_hub',
+      navigatorKey: navigatorKey,
       initialRoute: AppRoutes.home,
       themeMode: ThemeMode.light,
       theme: ThemeData(
@@ -42,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       builder: EasyLoading.init(),
       routes: AppRoutes.routes,
-      // navigatorObservers: [authMiddleware],
+      navigatorObservers: [authMiddleware],
     );
   }
 }

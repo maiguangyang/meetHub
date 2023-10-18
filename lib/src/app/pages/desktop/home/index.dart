@@ -1,5 +1,5 @@
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:meet_hub/abstract/stateless_widget.dart';
 import './controller.dart';
 
@@ -19,6 +19,10 @@ class DesktopHomeWidget extends IStatelessWidget<DesktopHomePage, DesktopHomeCon
   
   @override
   Widget build(BuildContext context) {
-    return const Text('desktop');
+    return  Column(
+      children: [
+        OutlinedButton(onPressed: state?.handleTestToast, child: const Text('desktop'))
+      ],
+    );
   }
 }

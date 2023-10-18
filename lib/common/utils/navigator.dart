@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Navigation {
-  static push(BuildContext context, String name) {
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      name,
-      (Route<dynamic> route) => false,
-    );
-  }
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
+void navigation(String name, {VoidCallback? callback}) {
+  navigatorKey.currentState?.pushNamedAndRemoveUntil(
+    name,
+    (Route<dynamic> route) => false,
+  );
+
+  // 执行回调函数（如果存在）
+  callback?.call();
 }

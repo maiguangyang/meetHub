@@ -7,6 +7,8 @@ import 'package:meet_hub/src/app/pages/mobile/home/index.dart';
 class AppRoutes {
   static String home = '/home';
   static String login = '/login';
+  static String join = '/login';
+  static String room = '/login';
 
   // desktop路由
   static Map<String, Widget Function(BuildContext)> desktopRoutes = {

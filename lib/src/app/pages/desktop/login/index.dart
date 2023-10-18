@@ -1,5 +1,5 @@
 
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:meet_hub/abstract/stateless_widget.dart';
 import './controller.dart';
 
@@ -17,6 +17,10 @@ class DesktopLoginWidget extends IStatelessWidget<DesktopLoginPage, DesktopLogin
 
   @override
   Widget build(BuildContext context) {
-    return const Text('login');
+    return  Column(
+      children: [
+        OutlinedButton(onPressed: state?.handleTestToast, child: const Text('mobile'))
+      ],
+    );
   }
 }

@@ -1,19 +1,11 @@
 import 'dart:math';
 import 'dart:io';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class Utils {
   static bool isDesktop = Platform.isWindows || Platform.isMacOS || Platform.isLinux;
   static bool isApp = Platform.isAndroid || Platform.isIOS;
   static bool isWeb = kIsWeb;
-  static bool isMobileWeb = userAgentIsMobileOrAndroid();
-
-  static bool userAgentIsMobileOrAndroid() {
-    String userAgent = html.window.navigator.userAgent.toLowerCase();
-    return userAgent.contains("mobile") || userAgent.contains("android");
-  }
 
   // generateRandomString ...
   static String generateRandomString(int length) {
